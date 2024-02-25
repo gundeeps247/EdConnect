@@ -1,5 +1,6 @@
 /* Navbar.css */
 .navbar {
+    overflow-x: scroll;
     display: flex;
     overflow-x: ellipsis;
     white-space: nowrap;
@@ -15,6 +16,12 @@
     top: 0;
     left: 0;
     z-index: 1;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.navbar::-webkit-scrollbar {
+    display: none
 }
 
 .navbar ul {
@@ -26,7 +33,14 @@
 }
 
 .navbar li {
-    margin-bottom: 20px;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.navbar li:hover {
+    background: #303030;
+    color: rgba(0, 255, 115, 0.9);
+    transition: color 0.5s;
 }
 
 .navbar a {
@@ -34,10 +48,6 @@
     text-decoration: none;
 }
 
-.navbar a:hover {
-    color: rgba(0, 255, 115, 0.9);
-    transition: color 0.5s;
-}
 .navbar button{
     background: transparent;
     border:#fff;
@@ -48,3 +58,6 @@
     color:#fff;
 }
     
+@media (min-width: 768px) {
+  .navbar { display: none }
+}
