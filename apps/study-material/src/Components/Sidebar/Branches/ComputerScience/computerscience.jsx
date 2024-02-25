@@ -2,14 +2,9 @@ import React from 'react';
 import './branches.css';
 import { Link } from 'react-router-dom';
 
-
-function Civil() {
-    const handleRedirect = (link) => {
-        window.location.href = link;
-    };
-
+function ComputerScience() {
     return (
-      <div className="big-wrapper">
+        <div className="big-wrapper">
             <div className="small-wrapper">
                 <h3><Link to=""></Link>Semester 1</h3>
             </div>
@@ -38,4 +33,4 @@ function Civil() {
     );
 }
 
-export default Civil;
+export default ComputerScience;
