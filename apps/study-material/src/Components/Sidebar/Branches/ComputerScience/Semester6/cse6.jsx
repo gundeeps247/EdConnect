@@ -1,8 +1,8 @@
 import React from 'react';
-import './semester.css';
+//import './semester.css';
 import { Link } from 'react-router-dom';
 
-function cse6 () {
+function cse6() {
     return (
         <div className="big-wrapper">
             <Link to="https://example.com" className="small-wrapper">
