@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* Resetting default styles for all elements */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Styling the body */
@@ -14,14 +14,14 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display:flex;
-  flex-direction:center;
+  display: flex;
+  flex-direction: center;
   justify-content: center;
   align-items: center;
-  min-height:100vh;
-  background:url('./Assets/Untitled\ design\(3\).png') ;
-  background-size:  cover;
-  
+  min-height: 100vh;
+  /*background: url('C:\Users\singh\Downloads\Untitled design(3).png');*/
+  background: rgb(0, 0, 0);
+  background-size: cover;
   background-position: center;
 }
 

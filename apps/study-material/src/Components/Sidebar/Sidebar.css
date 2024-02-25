@@ -11,7 +11,7 @@
   padding: 20px;
 }
 
-.sidebar ul {
+.sidebar > ul {
   list-style-type: none;
   padding: 0;
 }
@@ -24,7 +24,7 @@
 
 .sidebar a {
   text-decoration: none;
-  color: #333;
+  color: #fffa;
 }
 
 .sidebar a:hover {
@@ -39,7 +39,7 @@
 }
 
 .sidebar .home {
-  color: #ff0000a8;
+  color: #aaa;
   font-weight: 700;
   font-size: 30px;
 }
