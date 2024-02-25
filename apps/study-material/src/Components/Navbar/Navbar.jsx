@@ -6,31 +6,31 @@ function Navbar() {
   return (
     <nav className="navbar">
       <ul>
-        <Link to="/dashboard">
-          <li>Dashboard</li>
+        <Link to="/">
+          <li>Home</li>
         </Link>
 
-        <Link to="/admin">
-          <li>Admin</li>
+        <Link to="/mechanical">
+          <li>Mechanical</li>
         </Link>
 
-        <Link to="/student">
-          <li>Student</li>
+        <Link to="/civil">
+          <li>Civil</li>
         </Link>
 
-        <Link to="/academics">
-          <li>Academics</li>
+        <Link to="/electrical">
+          <li>Electrical</li>
         </Link>
 
-        <Link to="/fees">
-          <li>Fees Collection</li>
+        <Link to="/computer-science">
+          <li>Computer Science</li>
         </Link>
 
-        <Link to="/examinations">
-          <li>Examinations</li>
+        <Link to="/information-technology">
+          <li>Information Technology</li>
         </Link>
 
-        <Link to="/attendance">
+        {/* <Link to="/attendance">
           <li>Attendance</li>
         </Link>
 
@@ -53,7 +53,7 @@ function Navbar() {
         <Link to="/logout">
           <li>Logout</li>
         </Link>
-        {/* Add more links as needed */}
+        Add more links as needed */}
       </ul>
     </nav >
   );
