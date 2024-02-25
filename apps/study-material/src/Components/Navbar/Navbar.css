@@ -37,6 +37,8 @@
     border-radius: 5px;
 }
 
+.navbar li:nth-last-child(1) { margin-right:20px }
+
 .navbar li:hover {
     background: #303030;
     color: rgba(0, 255, 115, 0.9);
