@@ -12,7 +12,7 @@ function App() {
           "BAwD4axvKAgQLAGbKeAMmM4lutQpl99hXuRQgvRsvTlIH6-d4OIkgzPo33zuXrKJSGy8x0VKYUgn2mpghkZwm0Q",
       });
 
-      await fetch('http://localhost:5000/api/tokens/store', {
+      await fetch('https://push-notifications-3ls7.onrender.com/api/tokens/store', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
