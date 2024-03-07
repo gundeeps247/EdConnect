@@ -1,0 +1,77 @@
+/* client/src/components/AdmitCardGenerator.css */
+body {
+    margin: 0;
+  }
+  
+  .admit-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .admit-card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/image.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    z-index: -1; /* Ensure background is behind other elements */
+  }
+  
+  .admit-card-content {
+    z-index: 1; /* Ensure content is above background */
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7); /* Set background color with opacity */
+    text-align: center;
+  }
+  
+  .input-container {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 22px); /* Adjusting for border and padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: rgba(0, 123, 255, 1); /* Set button background color with full opacity */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 86, 179, 1); /* Set hover background color with full opacity */
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .admit-card {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .admit-card h3 {
+    margin-top: 0;
+  }
+  
