@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5010/api/users")
+      .get("https://admitcard-wbmu.onrender.com/api/users")
       .then((response) => {
         setUsers(response.data);
       })
