@@ -1,11 +1,22 @@
 // Home.js
 
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Home.css';
 import ProgressChart from '../components/ProgressChart'; // Import ProgressChart component
 import Calendar from '../components/Calendar'; // Import Calendar component
+import AttendanceHistogram from '../components/AttendanceHistogram'; // Import AttendanceHistogram component
+import CoursePieChart from '../components/CoursePieChart'; // Import CoursePieChart component
 
 const Home = () => {
+  // Dummy data for attendance histogram
+  const attendanceData = [
+    { name: 'Math', attendance: 80 },
+    { name: 'Science', attendance: 90 },
+    { name: 'History', attendance: 75 },
+    // Add more courses as needed
+  ];
+
   return (
     <div className="home-container">
       <div className="content-container">
@@ -20,12 +31,20 @@ const Home = () => {
         </div>
         <div className="boxes-container">
           <div className="box">
-            <h3>Due Assignments</h3>
-            <p>Due assignment details here...</p>
+            <Link to="/assignments"> {/* Link to the assignments page */}
+              <h3>Due Assignments</h3>
+              <p>Due assignment details here...</p>
+            </Link>
           </div>
           <div className="box">
             <h3>Attendance</h3>
-            <p>Attendance details here...</p>
+            <AttendanceHistogram data={attendanceData} />
+          </div>
+          <div className="box">
+            <Link to="/courses"> {/* Link to the courses page */}
+              <h3>Course Pie Chart</h3>
+              <CoursePieChart courses={attendanceData} />
+            </Link>
           </div>
         </div>
       </div>

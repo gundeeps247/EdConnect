@@ -14,14 +14,16 @@
 
 .welcome-container {
   display: flex;
+  justify-content: space-between; /* Adjust alignment */
+  align-items: center; /* Adjust alignment */
 }
 
 .welcome-box {
   background-color: #efc9f6;
-  padding: 100px;
+  padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  width: 50%; /* Set the width of the welcome box */
+  width: 45%; /* Adjust width */
   transition: background-color 0.3s ease; /* Add transition effect */
 }
 
@@ -33,13 +35,14 @@
 .calendar-container {
   padding: 10px;
   margin-left: 20px; /* Add margin between the welcome box and the calendar */
-  width: 50%; /* Set the width of the calendar container */
+  width: 45%; /* Adjust width */
 }
 
 .calendar {
   /* Add your calendar styling here */
   width: 100%; /* Ensure the calendar takes up the full width of its container */
 }
+
 .boxes-container {
   display: flex;
   justify-content: space-between; /* Separate the boxes evenly */
