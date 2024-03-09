@@ -5,14 +5,9 @@ import { Pie } from 'react-chartjs-2';
 import axios from 'axios'
 
 const CoursePieChart = ({ courses }) => {
-  // Extracting course names and attendance data
-  useEffect(() =>{
-  axios.get('https://localhost:5012/api/user/65ec332f92ffe03ab5dcfdf0').then(
-    (response) => {console.log(response.data)}
-  )
-  })
-  const courseNames = courses.map(course => course.name);
-  const attendanceData = courses.map(course => course.attendance);
+  console.log(courses)
+  const courseNames = courses?.map(course => course[0]);
+  const attendanceData = courses?.map(course => course[1]);
 
   // Pie chart data
   const data = {

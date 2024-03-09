@@ -11,8 +11,9 @@ const ProgressChart = () => {
     const fetchData = async () => {
       try {
         // Fetch user's progress data from the backend
-        const response = await axios.get('/api/user/progress');
-        setProgressData(response.data);
+        // const response = await axios.get('/api/user/progress');
+        // console.log(response)
+        // setProgressData(response.data);
       } catch (error) {
         console.error('Error fetching progress data:', error);
       }
