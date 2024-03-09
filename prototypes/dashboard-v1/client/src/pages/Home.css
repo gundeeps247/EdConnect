@@ -1,5 +1,6 @@
 /* Home.css */
 
+/* Set up the home container as a flex container with vertical alignment */
 .home-container {
   display: flex;
   flex-direction: column;
@@ -7,15 +8,17 @@
   padding: 30px;
 }
 
+/* Set up the content container as a flex container with horizontal alignment */
 .content-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
 }
 
+/* Welcome Box */
 .welcome-container {
-  display: flex;
-  justify-content: space-between; /* Adjust alignment */
-  align-items: center; /* Adjust alignment */
+  width: 45%;
 }
 
 .welcome-box {
@@ -23,65 +26,62 @@
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  width: 45%; /* Adjust width */
-  transition: background-color 0.3s ease; /* Add transition effect */
+  margin-right: 20px;
 }
 
-/* Apply hover effect to the welcome box */
-.welcome-box:hover {
-  background-color: #a2abaa; /* Change background color when hovering over the box */
-}
-
+/* Calendar Box */
 .calendar-container {
-  padding: 10px;
-  margin-left: 20px; /* Add margin between the welcome box and the calendar */
-  width: 45%; /* Adjust width */
+  width: 45%;
 }
 
 .calendar {
-  /* Add your calendar styling here */
-  width: 100%; /* Ensure the calendar takes up the full width of its container */
+  width: 100%;
+  border-radius: 5px;
 }
 
+/* Schedule Box */
+.schedule-container {
+  width: 45%;
+}
+
+.schedule-box {
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left:30px ;
+}
+
+/* Style for the items inside the schedule box */
+.schedule-item {
+  margin-bottom: 10px;
+}
+
+/* Boxes Container */
 .boxes-container {
   display: flex;
-  justify-content: space-between; /* Separate the boxes evenly */
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
-  max-width: 800px;
+  margin-top: 20px;
+}
+
+/* Individual Box Styles */
+.box {
+  width: calc(50% - 10px);
   margin-bottom: 20px;
 }
 
-.box {
-  background-color: #FFFFFF;
-  padding: 40px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  width: calc(50% - 10px); /* Set width for each box and subtract margin */
-  transition: background-color 0.3s ease; /* Add transition effect */
-}
-
-.box + .box {
-  margin-left: 20px; /* Add margin between the boxes */
-}
-
-.box:hover {
-  background-color: #f2f2f2; /* Change background color on hover */
-}
-
-.chart-container h2 {
-  margin-top: 0;
-}
-
-/* Additional colors for boxes */
+/* Apply background colors */
 .box:nth-child(odd) {
-  background-color: #b2dae4; /* Light red */
+  background-color: #b2dae4;
 }
 
 .box:nth-child(even) {
-  background-color: #66a9dd; /* Light green */
+  background-color: #66a9dd;
 }
 
-/* Apply hover effect */
 .box:hover {
-  background-color: #7f94b9; /* Change background color when hovering over the box */
+  background-color: #7f94b9;
 }
