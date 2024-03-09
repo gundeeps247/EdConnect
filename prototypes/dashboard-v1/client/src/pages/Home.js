@@ -7,15 +7,35 @@ import ProgressChart from '../components/ProgressChart';
 import Calendar from '../components/Calendar';
 import AttendanceHistogram from '../components/AttendanceHistogram';
 import CoursePieChart from '../components/CoursePieChart';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Home = () => {
+  const [userData, setUserData] = useState(null);
+  const [attendanceData, setAttendenceData] = useState()
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const url = 'http://localhost:5012/api/user/65ec332f92ffe03ab5dcfdf0';
+        console.log('Fetching user data from:', url);
+        const response = await axios.get(url).then(
+          (response)=>{
+            setUserData(response.data);
+            setAttendenceData(response.data.Courses)
+          }
+        )
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+    
+
+    fetchUserData(); // Call the function to fetch user data
+  }, []);
+
   // Dummy data for attendance histogram
-  const attendanceData = [
-    { name: 'Math', attendance: 80 },
-    { name: 'Science', attendance: 90 },
-    { name: 'History', attendance: 75 },
-    // Add more courses as needed
-  ];
+
 
   return (
     <div className="home-container">
