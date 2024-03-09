@@ -1,0 +1,84 @@
+/* Home.css */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.welcome-container {
+  display: flex;
+}
+
+.welcome-box {
+  background-color: #efc9f6;
+  padding: 100px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 50%; /* Set the width of the welcome box */
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+/* Apply hover effect to the welcome box */
+.welcome-box:hover {
+  background-color: #a2abaa; /* Change background color when hovering over the box */
+}
+
+.calendar-container {
+  padding: 10px;
+  margin-left: 20px; /* Add margin between the welcome box and the calendar */
+  width: 50%; /* Set the width of the calendar container */
+}
+
+.calendar {
+  /* Add your calendar styling here */
+  width: 100%; /* Ensure the calendar takes up the full width of its container */
+}
+.boxes-container {
+  display: flex;
+  justify-content: space-between; /* Separate the boxes evenly */
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.box {
+  background-color: #FFFFFF;
+  padding: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: calc(50% - 10px); /* Set width for each box and subtract margin */
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+.box + .box {
+  margin-left: 20px; /* Add margin between the boxes */
+}
+
+.box:hover {
+  background-color: #f2f2f2; /* Change background color on hover */
+}
+
+.chart-container h2 {
+  margin-top: 0;
+}
+
+/* Additional colors for boxes */
+.box:nth-child(odd) {
+  background-color: #b2dae4; /* Light red */
+}
+
+.box:nth-child(even) {
+  background-color: #66a9dd; /* Light green */
+}
+
+/* Apply hover effect */
+.box:hover {
+  background-color: #7f94b9; /* Change background color when hovering over the box */
+}
