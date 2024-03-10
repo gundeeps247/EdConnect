@@ -1,64 +1,50 @@
-// ProgressChart.js
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import {Chart, ArcElement, CategoryScale, LinearScale, BarElement} from 'chart.js'
+Chart.register(ArcElement);
+Chart.register(CategoryScale);
+Chart.register(LinearScale);
+Chart.register(BarElement)
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Chart from 'chart.js/auto';
 
-const ProgressChart = () => {
-  const [progressData, setProgressData] = useState([]);
+const ProgressChart = ({ courses }) => {
+  // Extracting course names and attendance data
+  const courseNames = courses?.map(course => course[0]);
+  const attendanceData = courses?.map(course => parseInt(course[2], 10));
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch user's progress data from the backend
-        // const response = await axios.get('/api/user/progress');
-        // console.log(response)
-        // setProgressData(response.data);
-      } catch (error) {
-        console.error('Error fetching progress data:', error);
-      }
-    };
+  // Chart.js data object
+  const data = {
+    labels: courseNames,
+    datasets: [
+      {
+        label: 'Attendance',
+          backgroundColor: 'rgba(75,192,192,1)',
+          borderColor: 'rgba(0,0,0,1)',
+        borderWidth: 1,
+        data: attendanceData,
+      },
+    ],
+  };
 
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const createChart = () => { // Move createChart inside useEffect to fix the missing dependency warning
-      if (progressData.length > 0) {
-        const ctx = document.getElementById('progressChart');
-        new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels: progressData.map(data => data.label),
-            datasets: [{
-              label: 'Progress',
-              data: progressData.map(data => data.value),
-              borderColor: 'rgba(75, 192, 192, 1)',
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',
-              borderWidth: 1
-            }]
+  // Chart.js options object
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
           },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      }
-    };
-
-    createChart(); // Call createChart directly within the useEffect hook
-
-  }, [progressData]); // Include progressData in the dependency array
+        },
+      ],
+    },
+  };
 
   return (
     <div>
       <h2>Progress Chart</h2>
-      <canvas id="progressChart" width="400" height="200"></canvas>
+      <Bar data={data} options={options} />
     </div>
   );
-}
+};
 
 export default ProgressChart;
