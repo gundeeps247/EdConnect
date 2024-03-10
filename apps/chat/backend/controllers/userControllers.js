@@ -2,22 +2,6 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const generateToken = require("../config/generateToken");
 
-// //@description     Get or Search all users
-// //@route           GET /api/user?search=
-// //@access          Public
-// const allUsers = asyncHandler(async (req, res) => {
-//     const keyword = req.query.search
-//         ? {
-//             $or: [
-//                 { name: { $regex: req.query.search, $options: "i" } },
-//                 { email: { $regex: req.query.search, $options: "i" } },
-//             ],
-//         }
-//         : {};
-
-//     const users = await User.find(keyword).find({ _id: { $ne: req.user._id } });
-//     res.send(users);
-// });
 
 // //@description     Register new user
 // //@route           POST /api/user/
@@ -72,7 +56,7 @@ const authUser = asyncHandler(async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
-            // isAdmin: user.isAdmin,
+//             // isAdmin: user.isAdmin,
             pic: user.pic,
             token: generateToken(user._id),
         });
@@ -82,7 +66,26 @@ const authUser = asyncHandler(async (req, res) => {
     }
 });
 
+//@description     Get or Search all users
+//@route           GET /api/user?search=
+//@access          Public
+// we are using queries instead of body
+const allUsers = asyncHandler(async (req, res) => {
+  const keyword = req.query.search? {
+        $or: [ //operator of mongodb
+          { name: { $regex: req.query.search, $options: "i" } }, //regex: pattern matching regular expression, i is used for case sensitive
+          { email: { $regex: req.query.search, $options: "i" } },
+        ],
+      }
+    : {};
+
+
+  const users = await User.find(keyword).find({ _id: { $ne: req.user._id } }); // we want search results, but not the user which is already logged in
+  res.send(users);
+});
+
 module.exports = {
-    // allUsers, 
-    registerUser, authUser
+    allUsers, 
+    registerUser,
+    authUser
 };

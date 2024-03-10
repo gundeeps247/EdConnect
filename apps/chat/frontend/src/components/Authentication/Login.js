@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
-import { ChatState } from "../../Context/ChatProvider";
+// import { ChatState } from "../../Context/ChatProvider";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -17,7 +17,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const history = useHistory();
-  const { setUser } = ChatState();
+  // const { setUser } = ChatState();
 
   const submitHandler = async () => {
     setLoading(true);
@@ -53,7 +53,7 @@ const Login = () => {
         isClosable: true,
         position: "bottom",
       });
-      setUser(data);
+      // setUser(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history.push("/chats");
@@ -71,13 +71,12 @@ const Login = () => {
   };
 
   return (
-    <VStack spacing="10px">
+    <VStack sapcing="5px" color="black">
       <FormControl id="email" isRequired>
-        <FormLabel>Email Address</FormLabel>
+        <FormLabel>Email</FormLabel>
         <Input
           value={email}
-          type="email"
-          placeholder="Enter Your Email Address"
+          placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
@@ -85,10 +84,10 @@ const Login = () => {
         <FormLabel>Password</FormLabel>
         <InputGroup size="md">
           <Input
+            type={show ? "text" : "password"}
+            placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type={show ? "text" : "password"}
-            placeholder="Enter password"
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>

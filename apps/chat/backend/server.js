@@ -1,24 +1,31 @@
 const express = require("express");
-const dotenv = require("dotenv")
+const connectDB = require("./config/db");
+const dotenv = require("dotenv");
+const colors = require("colors");
 const userRoutes = require("./routes/userRoutes");
-const { chats } = require("./data/data")
-const connectDB = require("./config/db")
-const colors = require("colors")
+const chatRoutes = require("./routes/chatRoutes");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+const cors = require("cors");
 
-
-dotenv.config()
-
-connectDB()
+dotenv.config();
+connectDB();
 const app = express();
 
-app.use(express.json()); // to accept json data
+// Add cors middleware here
+app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send("API is running successfully")
-})
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("API Running!");
+});
 
 app.use("/api/user", userRoutes);
+app.use("/api/chat",chatRoutes)
 
-const PORT = process.env.PORT || 5000
+app.use(notFound);
+app.use(errorHandler);
 
-app.listen(PORT, console.log(`Server is running on PORT ${PORT}`.blue.bold))
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, console.log(`Server is running on PORT ${PORT}`.yellow.bold));
