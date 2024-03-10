@@ -19,7 +19,8 @@ const Home = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const url = 'http://localhost:5012/api/user/65ec332f92ffe03ab5dcfdf0';
+        const url =
+          "https://edconnect-dashboard.onrender.com//api/user/65ec332f92ffe03ab5dcfdf0";
         console.log('Fetching user data from:', url);
         const response = await axios.get(url).then(
           (response)=>{
