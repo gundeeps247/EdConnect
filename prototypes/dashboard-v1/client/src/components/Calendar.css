@@ -8,10 +8,10 @@
   .calendar {
     /* Add your calendar styling here */
     width: 100%; /* Ensure the calendar takes up the full width of its container */
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
   }
   
   .calendar th,

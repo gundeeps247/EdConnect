@@ -12,7 +12,9 @@ import axios from 'axios';
 
 const Home = () => {
   const [userData, setUserData] = useState(null);
+
   const [attendanceData, setAttendenceData] = useState()
+  // const [gradesData, setGradesData] = useState()
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -34,7 +36,7 @@ const Home = () => {
     fetchUserData(); // Call the function to fetch user data
   }, []);
 
-  // Dummy data for attendance histogram
+  // Dummy data for grades hisGradesram
 
 
   return (
@@ -86,7 +88,7 @@ const Home = () => {
         </div>
         <div className="box">
           <h3>Progress Chart</h3>
-          <ProgressChart />
+          <ProgressChart  courses={attendanceData}/>
         </div>
       </div>
     </div>
