@@ -20,7 +20,7 @@ const Home = () => {
     const fetchUserData = async () => {
       try {
         const url =
-          "https://edconnect-dashboard.onrender.com//api/user/65ec332f92ffe03ab5dcfdf0";
+          "https://edconnect-dashboard.onrender.com/api/user/65ec332f92ffe03ab5dcfdf0";
         console.log('Fetching user data from:', url);
         const response = await axios.get(url).then(
           (response)=>{
