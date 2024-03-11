@@ -8,121 +8,121 @@ import {
   ModalCloseButton,
   Button,
   useDisclosure,
-  FormControl,
-  Input,
-  useToast,
-  Box,
+//   FormControl,
+//   Input,
+//   useToast,
+//   Box,
 } from "@chakra-ui/react";
-import axios from "axios";
-import { useState } from "react";
-import { ChatState } from "../../Context/ChatProvider";
-import UserBadgeItem from "../userAvatar/UserBadgeItem";
-import UserListItem from "../userAvatar/UserListItem";
+// import axios from "axios";
+// import { useState } from "react";
+// import { ChatState } from "../../Context/ChatProvider";
+// import UserBadgeItem from "../userAvatar/UserBadgeItem";
+// import UserListItem from "../userAvatar/UserListItem";
 
 const GroupChatModal = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [groupChatName, setGroupChatName] = useState();
-  const [selectedUsers, setSelectedUsers] = useState([]);
-  const [search, setSearch] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const toast = useToast();
+  // const [groupChatName, setGroupChatName] = useState();
+  // const [selectedUsers, setSelectedUsers] = useState([]);
+  // const [search, setSearch] = useState("");
+  // const [searchResult, setSearchResult] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  // const toast = useToast();
 
-  const { user, chats, setChats } = ChatState();
+  // const { user, chats, setChats } = ChatState();
 
-  const handleGroup = (userToAdd) => {
-    if (selectedUsers.includes(userToAdd)) {
-      toast({
-        title: "User already added",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
-      });
-      return;
-    }
+  // const handleGroup = (userToAdd) => {
+  //   if (selectedUsers.includes(userToAdd)) {
+  //     toast({
+  //       title: "User already added",
+  //       status: "warning",
+  //       duration: 5000,
+  //       isClosable: true,
+  //       position: "top",
+  //     });
+  //     return;
+  //   }
 
-    setSelectedUsers([...selectedUsers, userToAdd]);
-  };
+  //   setSelectedUsers([...selectedUsers, userToAdd]);
+  // };
 
-  const handleSearch = async (query) => {
-    setSearch(query);
-    if (!query) {
-      return;
-    }
+  // const handleSearch = async (query) => {
+  //   setSearch(query);
+  //   if (!query) {
+  //     return;
+  //   }
 
-    try {
-      setLoading(true);
-      const config = {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
-      console.log(data);
-      setLoading(false);
-      setSearchResult(data);
-    } catch (error) {
-      toast({
-        title: "Error Occured!",
-        description: "Failed to Load the Search Results",
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom-left",
-      });
-    }
-  };
+  //   try {
+  //     setLoading(true);
+  //     const config = {
+  //       headers: {
+  //         Authorization: `Bearer ${user.token}`,
+  //       },
+  //     };
+  //     const { data } = await axios.get(`/api/user?search=${search}`, config);
+  //     console.log(data);
+  //     setLoading(false);
+  //     setSearchResult(data);
+  //   } catch (error) {
+  //     toast({
+  //       title: "Error Occured!",
+  //       description: "Failed to Load the Search Results",
+  //       status: "error",
+  //       duration: 5000,
+  //       isClosable: true,
+  //       position: "bottom-left",
+  //     });
+  //   }
+  // };
 
-  const handleDelete = (delUser) => {
-    setSelectedUsers(selectedUsers.filter((sel) => sel._id !== delUser._id));
-  };
+  // const handleDelete = (delUser) => {
+  //   setSelectedUsers(selectedUsers.filter((sel) => sel._id !== delUser._id));
+  // };
 
   const handleSubmit = async () => {
-    if (!groupChatName || !selectedUsers) {
-      toast({
-        title: "Please fill all the feilds",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
-      });
-      return;
-    }
+  //   if (!groupChatName || !selectedUsers) {
+  //     toast({
+  //       title: "Please fill all the feilds",
+  //       status: "warning",
+  //       duration: 5000,
+  //       isClosable: true,
+  //       position: "top",
+  //     });
+  //     return;
+  //   }
 
-    try {
-      const config = {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      };
-      const { data } = await axios.post(
-        `/api/chat/group`,
-        {
-          name: groupChatName,
-          users: JSON.stringify(selectedUsers.map((u) => u._id)),
-        },
-        config
-      );
-      setChats([data, ...chats]);
-      onClose();
-      toast({
-        title: "New Group Chat Created!",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
-    } catch (error) {
-      toast({
-        title: "Failed to Create the Chat!",
-        description: error.response.data,
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
-    }
+  //   try {
+  //     const config = {
+  //       headers: {
+  //         Authorization: `Bearer ${user.token}`,
+  //       },
+  //     };
+  //     const { data } = await axios.post(
+  //       `/api/chat/group`,
+  //       {
+  //         name: groupChatName,
+  //         users: JSON.stringify(selectedUsers.map((u) => u._id)),
+  //       },
+  //       config
+  //     );
+  //     setChats([data, ...chats]);
+  //     onClose();
+  //     toast({
+  //       title: "New Group Chat Created!",
+  //       status: "success",
+  //       duration: 5000,
+  //       isClosable: true,
+  //       position: "bottom",
+  //     });
+  //   } catch (error) {
+  //     toast({
+  //       title: "Failed to Create the Chat!",
+  //       description: error.response.data,
+  //       status: "error",
+  //       duration: 5000,
+  //       isClosable: true,
+  //       position: "bottom",
+  //     });
+  //   }
   };
 
   return (
@@ -142,7 +142,7 @@ const GroupChatModal = ({ children }) => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody d="flex" flexDir="column" alignItems="center">
-            <FormControl>
+            {/* <FormControl>
               <Input
                 placeholder="Chat Name"
                 mb={3}
@@ -178,7 +178,7 @@ const GroupChatModal = ({ children }) => {
                     handleFunction={() => handleGroup(user)}
                   />
                 ))
-            )}
+            )} */}
           </ModalBody>
           <ModalFooter>
             <Button onClick={handleSubmit} colorScheme="blue">
