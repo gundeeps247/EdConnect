@@ -1,0 +1,51 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Container styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Page heading styles */
+.page-heading {
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd; /* Add border around the table */
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table th:first-child,
+.table td:first-child {
+  border-left: none;
+}
+
+.table th:last-child,
+.table td:last-child {
+  border-right: none;
+}
