@@ -69,7 +69,7 @@ const MyChats = ({ fetchAgain }) => {
         My Chats
         <GroupChatModal> 
           <Button
-            isplaydisplay
+            // isplaydisplay
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
             rightIcon={<AddIcon />}
           >
@@ -78,7 +78,7 @@ const MyChats = ({ fetchAgain }) => {
         </GroupChatModal>
       </Box>
       <Box
-        isplaydisplay
+        // isplaydisplay
         flexDir="column"
         p={3}
         bg="#F8F8F8"
