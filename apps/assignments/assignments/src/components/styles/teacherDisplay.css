@@ -1,0 +1,22 @@
+.assignment-container {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.assignment-box {
+    border: 3px solid #1a1919;
+    padding: 50px;
+    display: inline-block;
+}
+.assignment-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.assignment-button:hover {
+    background-color: darkblue;
+}

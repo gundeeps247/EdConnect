@@ -1,0 +1,23 @@
+.pdf-container {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.upload-box {
+    border: 3px solid #131111;
+    padding: 50px;
+    display: inline-block;
+}
+
+.upload-button {
+    background-color: blue;
+    color: white; /* Set text color to white */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: rgb(22, 63, 111);
+}
