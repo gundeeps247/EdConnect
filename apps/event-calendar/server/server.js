@@ -11,9 +11,8 @@ app.use(bodyParser.json());
 // Adding CORS middleware
 app.use(cors());
 
-mongoose.connect(process.env.MONGODB_URI, {
-  // mongoose options
-})
+console.log(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log("Database connected successfully.")
 })

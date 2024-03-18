@@ -4,7 +4,6 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import AddEventModal from './AddEventModal';
 import axios from "axios";
 import moment from "moment";
-
 function Calendar() {
     const [modalOpen, setModalOpen] = useState(false);
     const [events, setEvents] = useState([]);  
@@ -23,7 +22,8 @@ function Calendar() {
 
     async function handleEventAdded(data) {
         try {
-            await axios.post("http://localhost:5002/api/calendar/create-event", data.event);
+            console.log("in event add")
+            await axios.post("https://event-calender-82t5.onrender.com/api/calendar/create-event", data.event);
         } catch (error) {
             console.error('Error adding event:', error);
             // Handle error here
@@ -32,7 +32,7 @@ function Calendar() {
 
     async function handleDatesSet(dateInfo) {
         try {
-            const response = await axios.get("http://localhost:5002/api/calendar/get-events", {
+            const response = await axios.get("https://event-calender-82t5.onrender.com/api/calendar/get-events", {
                 params: {
                     starts: moment(dateInfo.start).toISOString(),
                     ends: moment(dateInfo.end).toISOString()

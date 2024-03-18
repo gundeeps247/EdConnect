@@ -5,6 +5,7 @@ const moment = require("moment");
 
 router.post("/create-event", async (req, res) => {  
     try {
+        console.log("in create")
         const event = new Event(req.body); // Corrected instantiation of Event
         await event.save(); // Corrected variable name to event
         res.sendStatus(201);
