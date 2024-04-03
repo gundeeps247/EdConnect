@@ -1,0 +1,56 @@
+{
+  "name": "reddit-e",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.9.5",
+    "@dicebear/collection": "^7.0.5",
+    "@dicebear/core": "^7.0.5",
+    "@heroicons/react": "^1.0.6",
+    "@react-icons/all-files": "^4.1.0",
+    "@types/node": "^18.2.20",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.0.10",
+    "@types/react-timeago": "^4.1.7",
+    "@uiball/loaders": "^1.3.1",
+    "apollo-server-express": "^3.13.0",
+    "cors": "^2.8.5",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.1.0",
+    "express": "^4.18.3",
+    "firebase": "^10.9.0",
+    "graphql": "^16.8.1",
+    "http-proxy-middleware": "^2.0.6",
+    "net": "^1.0.2",
+    "next": "14.1.0",
+    "next-auth": "^4.24.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.22.2",
+    "react-timeago": "^7.2.0",
+    "typescript": "5.3.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "encoding": "^0.1.13",
+    "http-server": "^14.1.1",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/reddit-e.git"
+  }
+}
