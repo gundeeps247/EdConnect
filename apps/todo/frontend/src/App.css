@@ -2,7 +2,12 @@
 body{
   background-color: rgb(188, 214, 214);
   font-family: 'Poppins', sans-serif;
+  padding-top: 70px;
 }
+
+/* .app{
+  padding-top: 00px;
+} */
 /* customize scroll bar */
 ::-webkit-scrollbar {
   width: 8px;

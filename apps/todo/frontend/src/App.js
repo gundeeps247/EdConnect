@@ -16,6 +16,8 @@ import Register from './components/Register';
 import ForgotPassword from './components/forgotPassword/ForgotPassword';
 import ResetPassword from './components/forgotPassword/ResetPassword';
 import axios from './Axios/axios.js';
+import Navbar from './components/Navbar.jsx'
+
 function App() {
   const token = JSON.parse(localStorage.getItem("authToken"));
   const [tasks, dispatch] = useReducer(taskReducer, [])
@@ -64,6 +66,7 @@ function App() {
     <BrowserRouter>
       <TokenContext.Provider value={{userToken, tokenDispatch, user, userDispatch}}>
         <TaskContext.Provider value={{ tasks, dispatch }}>
+        <Navbar />
           <Routes>
             <Route path="/" element={<Header />}>
               <Route path='/' element={token ? <Layout /> : <Login />}>
