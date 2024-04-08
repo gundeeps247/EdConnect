@@ -63,6 +63,7 @@ function Calendar() {
                 onClose={() => setModalOpen(false)}
                 onEventAdded={(event) => onEventAdded(event)}
             />
+            
         </section>
     );
 }
