@@ -6,7 +6,6 @@ function AddNotice() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState('');
-  const [noticeSubmitted, setNoticeSubmitted] = useState(false);
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -39,28 +38,16 @@ function AddNotice() {
       };
 
       // Send POST request to backend API to create a new notice
-      await axios.post('https://notice-board-h243.onrender.com/notices', noticeData);
+      await axios.post('https://notice-board-h243.onrender.com/api/notices', noticeData);
 
       // Clear form fields after successful submission
       setTitle('');
       setContent('');
       setImage('');
-
-      // Set noticeSubmitted to true
-      // setNoticeSubmitted(true);
     } catch (error) {
       console.error('Error:', error);
     }
   };
-
-  if (noticeSubmitted) {
-    return (
-      <div className="add-notice-container">
-        <h2>Notice Submitted Successfully!</h2>
-        <button onClick={() => window.location.href = 'https://notification-self.vercel.app/'}>Send Notifications</button>
-      </div>
-    );
-  }
 
   return (
     <div className="add-notice-container">
