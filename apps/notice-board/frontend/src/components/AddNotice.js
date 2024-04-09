@@ -47,7 +47,7 @@ function AddNotice() {
       setImage('');
 
       // Set noticeSubmitted to true
-      setNoticeSubmitted(true);
+      // setNoticeSubmitted(true);
     } catch (error) {
       console.error('Error:', error);
     }
