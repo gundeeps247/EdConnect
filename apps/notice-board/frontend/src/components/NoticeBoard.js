@@ -13,7 +13,7 @@ function NoticeBoard({ loggedIn }) {
   const [expandedNoticeId, setExpandedNoticeId] = useState(null);
 
   useEffect(() => {
-    axios.get('https://notice-board-4d7b.onrender.com/api/notices')
+    axios.get('https://notice-board-h243.onrender.com/api/notices')
       .then(response => {
         setNotices(response.data.reverse());
         Modal.setAppElement('#root');
@@ -25,7 +25,7 @@ function NoticeBoard({ loggedIn }) {
 
   const deleteNotice = async (id) => {
     try {
-      await axios.delete(`https://notice-board-4d7b.onrender.com/api/notices/${id}`);
+      await axios.delete(`https://notice-board-h243.onrender.com/api/notices/${id}`);
       const updatedNotices = notices.filter((notice) => notice._id !== id);
       setNotices(updatedNotices);
     } catch (error) {
