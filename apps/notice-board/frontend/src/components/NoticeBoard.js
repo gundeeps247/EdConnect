@@ -64,9 +64,7 @@ function NoticeBoard({ loggedIn }) {
 
   return (
     <div className="notice-board">
-      {loggedIn && (
-        <button onClick={() => window.location.href = 'https://notification-zq33.vercel.app/'}>Go to Notifications</button>
-      )}
+      <button onClick={() => window.location.href = 'https://notification-roan-one.vercel.app/'}>Go to Notifications</button>
       <h1 className='title'>Notice Board</h1>
       {notices.map(notice => (
         <div key={notice._id} className={`notice ${expandedNoticeId === notice._id ? 'expanded' : ''}`} style={{ maxHeight: expandedNoticeId === notice._id ? 'none' : '300px' }}>
