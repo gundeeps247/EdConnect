@@ -35,9 +35,3 @@ self.addEventListener('push', e => {
     self.registration.showNotification('New Notice', {body:e.data.text() })
     
 });
-
-// Public Key:
-// BFKnRoDz48jEu9XMhT7ogCHkMb82kgCIpVBrdWb9MFOoDQ_S7vQ4TXFf9YLGAvB2XAKXufCEeMuRvpoNUkRP8Xg
-
-// Private Key:
-// VAPID_PRIVATE_KEY_REMOVED
