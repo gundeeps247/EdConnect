@@ -1,19 +1,38 @@
-const MongoClient = require('mongodb').MongoClient;
+const express = require("express");
+const app = express();
+const webpush = require('web-push');
+const cors = require("cors");
+const { MongoClient } = require('mongodb'); // Added for MongoDB connection
 
+const port = 3000;
+
+const apiKeys = {
+  publicKey: "BFKnRoDz48jEu9XMhT7ogCHkMb82kgCIpVBrdWb9MFOoDQ_S7vQ4TXFf9YLGAvB2XAKXufCEeMuRvpoNUkRP8Xg",
+  privateKey: process.env.VAPID_PRIVATE_KEY
+};
+
+webpush.setVapidDetails(
+  'mailto:admin@example.com',
+  apiKeys.publicKey,
+  apiKeys.privateKey
+);
+
+app.use(cors());
+app.use(express.json());
+
+// Replace with your MongoDB Atlas connection string
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-let db; // Declare db variable
-
 async function connectToDb() {
-  try {
-    await client.connect();
-    console.log("Connected to MongoDB Atlas");
-    db = client.db("your-database-name"); // Replace with your database name
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
+    try {
+      await client.connect();
+      console.log("Connected to MongoDB Atlas");
+      db = client.db("tokens"); // Replace with your database name
+    } catch (error) {
+      console.error("Error connecting to MongoDB:", error);
+    }
   }
-}
   
   connectToDb(); // Call the connect function on app startup
   
