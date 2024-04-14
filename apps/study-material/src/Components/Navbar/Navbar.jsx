@@ -1,61 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+// import { a } from 'react-router-dom';
+import "./Navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
       <ul>
-        <Link to="/">
-          <li>Home</li>
-        </Link>
-
-        <Link to="/mechanical">
-          <li>Mechanical</li>
-        </Link>
-
-        <Link to="/civil">
-          <li>Civil</li>
-        </Link>
-
-        <Link to="/electrical">
-          <li>Electrical</li>
-        </Link>
-
-        <Link to="/computer-science">
-          <li>Computer Science</li>
-        </Link>
-
-        <Link to="/information-technology">
-          <li>Information Technology</li>
-        </Link>
-
-        {/* <Link to="/attendance">
-          <li>Attendance</li>
-        </Link>
-
-        <a href="https://curacare.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <li>Communicate</li>
+        <a href="https://edconnect-dashboard-blond.vercel.app/">
+          <li>Dashboard</li>
         </a>
 
-        <Link to="/my-account">
+        <a href="https://event-calender-edconnect.vercel.app/">
+          <li>Event Calender</li>
+        </a>
+
+        <a
+          href="https://edconnect-meeting.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <li>Online Session </li>
+        </a>
+        <a href="https://chat-psi-jet.vercel.app/">
+          <li>Chat-App</li>
+        </a>
+        <a href="https://ed-connect.vercel.app/student">
           <li>My Account</li>
-        </Link>
+        </a>
 
-        <Link to="/settings">
+        {/* <a href="/examination">
+          <li>Examinations</li>
+        </a>
+
+        <a href="/attendance">
+          <li>Attendance</li>
+        </a> */}
+
+        <a href="https://ed-connect.vercel.app/settings">
           <li>Settings</li>
-        </Link>
+        </a>
 
-        <Link to="/change-password">
-          <li>Change Password</li>
-        </Link>
-
-        <Link to="/logout">
+        <a href="https://ed-connect.vercel.app/startpage">
           <li>Logout</li>
-        </Link>
-        Add more links as needed */}
+        </a>
+        {/* Add more as as needed */}
       </ul>
-    </nav >
+    </nav>
   );
 }
 
