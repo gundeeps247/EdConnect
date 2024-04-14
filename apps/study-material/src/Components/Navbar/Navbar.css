@@ -4,13 +4,13 @@
     display: flex;
     overflow-x: ellipsis;
     white-space: nowrap;
-    justify-content: space-between; /* Distribute items evenly */
+    justify-content: center; /* Distribute items evenly */
     align-items: center; /* Vertically center the content */
-    padding: 20px;
-    background: transparent;
+    padding: 7px;
+    background: #001929; /* Change the background color to Prussian blue */
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(50px);
-    color: #fff;
+    color: #ffffff;
     position: fixed;
     width: 100%;
     top: 0;
@@ -60,6 +60,6 @@
     color:#fff;
 }
     
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .navbar { display: none }
-}
+} */
