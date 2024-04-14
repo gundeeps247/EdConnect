@@ -53,7 +53,7 @@ function App() {
             </form>
           </div>
         )}
-        {loggedIn && <AddNotice />} {/* Render AddNotice only if logged in */}
+        {loggedIn && <AddNotice />}
       </div>
     </Router>
   );
