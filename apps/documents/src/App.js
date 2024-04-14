@@ -5,6 +5,8 @@ import { auth, provider } from './firebase';
 import styled from 'styled-components';
 import { useState } from 'react';
 import logo from './assets/logo.png';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
 
 const LoginWrapper = styled.div`
   background: lightblue;
@@ -36,7 +38,7 @@ const LoginWrapper = styled.div`
   }
 `;
 
-function App() {
+const App = () => {
   const [user, setUser] = useState(null);
 
   const signIn = () => {
@@ -46,23 +48,26 @@ function App() {
   };
 
   return (
-    <>
-      {user ? (
-        <>
-          <Header photoURL={user.photoURL} />
-          <div className="App">
-            <Sidebar />
-            <Data />
-          </div>
-        </>
-      ) : (
-        <LoginWrapper>
-          <img src={logo} alt="Logo" /> {/* Use the logo image */}
-          <button onClick={signIn}>Login to Drive</button>
-        </LoginWrapper>
-      )}
-    </>
+    <Router>
+      <div>
+        <Navbar />
+        {user ? (
+          <>
+            <Header photoURL={user.photoURL} />
+            <div className="App">
+              <Sidebar />
+              <Data />
+            </div>
+          </>
+        ) : (
+          <LoginWrapper>
+            <img src={logo} alt="Logo" /> {/* Use the logo image */}
+            <button onClick={signIn}>Login to Drive</button>
+          </LoginWrapper>
+        )}
+      </div>
+    </Router>
   );
 }
 
-export default App;
+      export default App;
