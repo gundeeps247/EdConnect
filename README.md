@@ -70,7 +70,7 @@ Everything under `apps/` was part of the working product.
 | [`apps/notifications`](apps/notifications) | Browser push notifications. A service worker subscribes the browser; the server stores subscriptions and pushes to all of them. | HTML and JavaScript, service worker, Express, web-push, MongoDB | gundeeps247, yashgoyal-16 |
 | [`apps/attendance`](apps/attendance) | An admin adds students and marks classes attended; students log in to see their count. | React, Express, Mongoose | gundeeps247, Ranbir-GNE |
 | [`apps/event-calendar`](apps/event-calendar) | Month calendar where events are created and stored. | React, FullCalendar, Express, Mongoose | Sukhmangill977 |
-| [`apps/todo`](apps/todo) | Personal task list with accounts, active and completed views, and password reset by email. | React, MUI, Tailwind, Express, Mongoose, JWT, Nodemailer | gundeeps247, Sukhmangill977 |
+| [`apps/todo`](apps/todo) | Personal task list with accounts, active and completed views, and password reset by email. | React, MUI, Tailwind, Express, Mongoose, JWT, Nodemailer | Adapted from [alokyadav1/mern-todo-app](https://github.com/alokyadav1/mern-todo-app) by gundeeps247, Sukhmangill977 |
 | [`apps/forums`](apps/forums) | Reddit-style discussion board with communities, posts, comments and votes. | Next.js, TypeScript, Tailwind, NextAuth, Apollo, StepZen GraphQL, Postgres | gundeeps247 |
 
 ### Prototypes
@@ -135,6 +135,7 @@ No credentials are stored in this repository. Before a module will run you need 
 - **Firebase apps** (`apps/documents`, `apps/meetings`, `prototypes/uploader`, `prototypes/push-notifications`) have `YOUR_FIREBASE_API_KEY` in their Firebase config file. Replace the config object with the one from your own Firebase project.
 - **Meetings** also needs a ZEGOCLOUD server secret in `REACT_APP_ZEGOCLOUD_SERVER_SECRET`.
 - **Forums** needs a Postgres connection in `stepzen/config.yaml`, a StepZen key and Reddit OAuth credentials.
+- **Notice board and notifications** gate their admin screens with a username and password written in the front-end code (`apps/notice-board/frontend/src/App.js` and `apps/notifications/script.js`). They are set to `admin` and `change-me`. This check runs in the browser, so it keeps honest users out and nothing more.
 
 ## Deployments
 
@@ -179,7 +180,7 @@ With contributions from [@Savy011](https://github.com/Savy011) (study material),
 
 ## About this repository
 
-EdConnect was originally spread across 23 repositories, one per module or experiment. They were merged here in October 2026:
+EdConnect was originally spread across 23 repositories: this one, which held only a placeholder README, and the 22 listed below, one per module or experiment. They were merged here in October 2026:
 
 - **History is kept.** Each module's commits were imported with their original authors and dates, 307 commits in all. `git log -- apps/chat` shows the history of one module.
 - **Dependencies and build output were left out.** Several of the original repositories had `node_modules` committed; those, compiled `build/` folders and `.DS_Store` files were dropped.
@@ -211,6 +212,8 @@ EdConnect was originally spread across 23 repositories, one per module or experi
 | `prototypes/todo-backend` | todo-edconnect |
 | `prototypes/automated-notifications` | automated-notifications |
 
-## Licence
+## Licence and credits
 
-MIT. See [LICENSE](LICENSE).
+The team's own code is under the MIT licence. See [LICENSE](LICENSE).
+
+`apps/todo` started from [alokyadav1/mern-todo-app](https://github.com/alokyadav1/mern-todo-app), which we adapted to fit EdConnect; that project's code remains its author's.
