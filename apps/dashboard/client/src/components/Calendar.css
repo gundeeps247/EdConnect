@@ -1,0 +1,33 @@
+.calendar-container {
+	width: 100%
+}
+
+.calendar {
+	width: 70%;
+	align-items: center;
+	padding: 20px;
+	border-radius: 5px
+}
+
+.calendar td {
+	cursor: pointer;
+	/* background-color: #fff */
+}
+
+.calendar td:hover {
+	background-color: #f2f2f275
+}
+
+.calendar td,
+.calendar th {
+	color: #fff;
+	border: 1px solid #ddd;
+	text-align: center;
+	padding: 10px
+}
+.month-name {
+	text-align: center;
+    font-size: 20px;
+    color: #fff;
+	margin-left: 30px;
+}
