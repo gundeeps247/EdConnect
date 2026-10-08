@@ -1,0 +1,63 @@
+.notice-board {
+  max-width: 75%;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.title {
+  color: #f9f9f9;
+}
+
+.notice {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: calc(100% - 40px); /* Adjust width as needed */
+  overflow: hidden;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Adjust to space items evenly */
+}
+
+.notice img {
+  height: 140px; /* Increase the height of the image */
+  width: 140px; /* Increase the width of the image */
+  margin-right: 10px; /* Add some space between the image and text */
+}
+
+.notice-content {
+  flex-grow: 1; /* Allow the content to grow to fill the space */
+  text-align: justify; /* Justify text content */
+}
+
+.notice img,
+.notice-content h3,
+.notice-content p {
+  margin-bottom: 10px;
+}
+
+.notice img:last-child,
+.notice-content p:last-child {
+  margin-bottom: 0; /* Remove extra margin from last elements */
+}
+
+.toggle-button {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: block; /* Ensure buttons are displayed as blocks */
+  margin-left: auto; /* Center the buttons */
+  margin-right: auto; /* Center the buttons */
+  width: fit-content; /* Adjust width to fit content */
+}
+
+@media only screen and (max-width: 600px) {
+  .notice {
+    max-width: calc(100% - 20px); /* Adjust width as needed for smaller screens */
+  }
+}
