@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Raleway', sans-serif ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-color: black;
+  /* background-color: black; */
+  display: flex;
+  /* background-size: cover; */
+  /* flex-direction: center; */
+  justify-content: center;
+  align-items: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+

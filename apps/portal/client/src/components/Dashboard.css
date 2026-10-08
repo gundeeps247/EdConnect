@@ -1,0 +1,28 @@
+.dashboard {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
+	padding: 1rem
+}
+
+.dashboard-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1rem
+}
+
+.dashboard-block {
+	flex: 1 0 auto;
+	padding: 2rem;
+	border: 2px solid rgba(255, 255, 255, .2);
+	border-radius: 4px;
+	margin-right: 1rem;
+	background: 0 0;
+	backdrop-filter: blur(50px);
+	color: #fff
+}
+
+.dashboard-block h3 {
+	margin-bottom: .5rem
+}
